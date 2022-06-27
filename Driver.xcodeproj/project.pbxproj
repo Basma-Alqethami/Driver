@@ -21,6 +21,19 @@
 		4FAEF14D2846150F000B9A80 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4FAEF14C2846150F000B9A80 /* Assets.xcassets */; };
 		4FAEF1502846150F000B9A80 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4FAEF14E2846150F000B9A80 /* LaunchScreen.storyboard */; };
 		4FAEF15928463940000B9A80 /* LogoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FAEF15828463940000B9A80 /* LogoViewController.swift */; };
+		4FB20C702868A260008010CE /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FB20C6F2868A260008010CE /* SignUpViewController.swift */; };
+		4FB20C722868A881008010CE /* ResetPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FB20C712868A881008010CE /* ResetPasswordViewController.swift */; };
+		4FB20C782868B81A008010CE /* ForgerPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FB20C772868B81A008010CE /* ForgerPasswordViewController.swift */; };
+		4FB20C7A2868B834008010CE /* ConfirmViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FB20C792868B834008010CE /* ConfirmViewController.swift */; };
+		4FB20C7F28692F27008010CE /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 4FB20C7E28692F27008010CE /* FirebaseAuth */; };
+		4FB20C8128692F27008010CE /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = 4FB20C8028692F27008010CE /* FirebaseDatabase */; };
+		4FB20C8328692F27008010CE /* FirebaseRemoteConfig in Frameworks */ = {isa = PBXBuildFile; productRef = 4FB20C8228692F27008010CE /* FirebaseRemoteConfig */; };
+		4FB20C8528692F27008010CE /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 4FB20C8428692F27008010CE /* FirebaseStorage */; };
+		4FB20C87286A12FF008010CE /* DatabaseManger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FB20C86286A12FF008010CE /* DatabaseManger.swift */; };
+		4FB20C89286A14B9008010CE /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FB20C88286A14B9008010CE /* User.swift */; };
+		4FB20C8D286A2F50008010CE /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4FB20C8C286A2F50008010CE /* GoogleService-Info.plist */; };
+		4FB20C8F286A3953008010CE /* PromoCodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FB20C8E286A3953008010CE /* PromoCodeViewController.swift */; };
+		4FB20C91286A6717008010CE /* ResetConfirmViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FB20C90286A6717008010CE /* ResetConfirmViewController.swift */; };
 		4FE0D60228609EDD0066F00B /* SideMenu in Frameworks */ = {isa = PBXBuildFile; productRef = 4FE0D60128609EDD0066F00B /* SideMenu */; };
 		4FF150A2285876770078C78C /* GoogleMaps in Frameworks */ = {isa = PBXBuildFile; productRef = 4FF150A1285876770078C78C /* GoogleMaps */; };
 		4FF150A4285876770078C78C /* GoogleMapsBase in Frameworks */ = {isa = PBXBuildFile; productRef = 4FF150A3285876770078C78C /* GoogleMapsBase */; };
@@ -46,6 +59,15 @@
 		4FAEF14F2846150F000B9A80 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4FAEF1512846150F000B9A80 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4FAEF15828463940000B9A80 /* LogoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoViewController.swift; sourceTree = "<group>"; };
+		4FB20C6F2868A260008010CE /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		4FB20C712868A881008010CE /* ResetPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPasswordViewController.swift; sourceTree = "<group>"; };
+		4FB20C772868B81A008010CE /* ForgerPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgerPasswordViewController.swift; sourceTree = "<group>"; };
+		4FB20C792868B834008010CE /* ConfirmViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmViewController.swift; sourceTree = "<group>"; };
+		4FB20C86286A12FF008010CE /* DatabaseManger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseManger.swift; sourceTree = "<group>"; };
+		4FB20C88286A14B9008010CE /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		4FB20C8C286A2F50008010CE /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		4FB20C8E286A3953008010CE /* PromoCodeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PromoCodeViewController.swift; sourceTree = "<group>"; };
+		4FB20C90286A6717008010CE /* ResetConfirmViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetConfirmViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,11 +75,15 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4FB20C8328692F27008010CE /* FirebaseRemoteConfig in Frameworks */,
 				4FF150A2285876770078C78C /* GoogleMaps in Frameworks */,
 				4FF150A6285876770078C78C /* GoogleMapsCore in Frameworks */,
+				4FB20C8528692F27008010CE /* FirebaseStorage in Frameworks */,
 				4FF150A8285876770078C78C /* GoogleMapsM4B in Frameworks */,
 				4FF150AA285876770078C78C /* GooglePlaces in Frameworks */,
 				4FE0D60228609EDD0066F00B /* SideMenu in Frameworks */,
+				4FB20C7F28692F27008010CE /* FirebaseAuth in Frameworks */,
+				4FB20C8128692F27008010CE /* FirebaseDatabase in Frameworks */,
 				4FF150A4285876770078C78C /* GoogleMapsBase in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -70,6 +96,8 @@
 			children = (
 				4F89F8762847830B00AB7152 /* SideMenuModel.swift */,
 				4F89F87A2847837300AB7152 /* SideMenuCell.swift */,
+				4FB20C86286A12FF008010CE /* DatabaseManger.swift */,
+				4FB20C88286A14B9008010CE /* User.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -100,6 +128,7 @@
 				4FAEF1462846150B000B9A80 /* Main.storyboard */,
 				4FAEF14C2846150F000B9A80 /* Assets.xcassets */,
 				4FAEF14E2846150F000B9A80 /* LaunchScreen.storyboard */,
+				4FB20C8C286A2F50008010CE /* GoogleService-Info.plist */,
 				4FAEF1512846150F000B9A80 /* Info.plist */,
 				4FAEF1492846150B000B9A80 /* Driver.xcdatamodeld */,
 			);
@@ -123,6 +152,12 @@
 			children = (
 				4FAEF1442846150B000B9A80 /* LogInViewController.swift */,
 				4FAEF15828463940000B9A80 /* LogoViewController.swift */,
+				4FB20C6F2868A260008010CE /* SignUpViewController.swift */,
+				4FB20C712868A881008010CE /* ResetPasswordViewController.swift */,
+				4FB20C772868B81A008010CE /* ForgerPasswordViewController.swift */,
+				4FB20C792868B834008010CE /* ConfirmViewController.swift */,
+				4FB20C8E286A3953008010CE /* PromoCodeViewController.swift */,
+				4FB20C90286A6717008010CE /* ResetConfirmViewController.swift */,
 			);
 			path = LogIn;
 			sourceTree = "<group>";
@@ -150,6 +185,10 @@
 				4FF150A7285876770078C78C /* GoogleMapsM4B */,
 				4FF150A9285876770078C78C /* GooglePlaces */,
 				4FE0D60128609EDD0066F00B /* SideMenu */,
+				4FB20C7E28692F27008010CE /* FirebaseAuth */,
+				4FB20C8028692F27008010CE /* FirebaseDatabase */,
+				4FB20C8228692F27008010CE /* FirebaseRemoteConfig */,
+				4FB20C8428692F27008010CE /* FirebaseStorage */,
 			);
 			productName = Driver;
 			productReference = 4FAEF13D2846150B000B9A80 /* Driver.app */;
@@ -182,6 +221,7 @@
 			packageReferences = (
 				4FF150A0285876770078C78C /* XCRemoteSwiftPackageReference "GoogleMaps-SP" */,
 				4FE0D60028609EDD0066F00B /* XCRemoteSwiftPackageReference "SideMenu" */,
+				4FB20C7D28692F27008010CE /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 			);
 			productRefGroup = 4FAEF13E2846150B000B9A80 /* Products */;
 			projectDirPath = "";
@@ -198,6 +238,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4FAEF1502846150F000B9A80 /* LaunchScreen.storyboard in Resources */,
+				4FB20C8D286A2F50008010CE /* GoogleService-Info.plist in Resources */,
 				4FAEF14D2846150F000B9A80 /* Assets.xcassets in Resources */,
 				4FAEF1482846150B000B9A80 /* Main.storyboard in Resources */,
 			);
@@ -215,11 +256,19 @@
 				4F89F8772847830B00AB7152 /* SideMenuModel.swift in Sources */,
 				4FAEF1452846150B000B9A80 /* LogInViewController.swift in Sources */,
 				4F2AB831285F42C800637D73 /* MapViewController.swift in Sources */,
+				4FB20C8F286A3953008010CE /* PromoCodeViewController.swift in Sources */,
 				4FAEF1412846150B000B9A80 /* AppDelegate.swift in Sources */,
+				4FB20C702868A260008010CE /* SignUpViewController.swift in Sources */,
 				4FAEF15928463940000B9A80 /* LogoViewController.swift in Sources */,
 				4F89F87B2847837300AB7152 /* SideMenuCell.swift in Sources */,
+				4FB20C722868A881008010CE /* ResetPasswordViewController.swift in Sources */,
 				4FAEF1432846150B000B9A80 /* SceneDelegate.swift in Sources */,
+				4FB20C89286A14B9008010CE /* User.swift in Sources */,
+				4FB20C7A2868B834008010CE /* ConfirmViewController.swift in Sources */,
 				4F89F8722847794A00AB7152 /* SideMenuViewController.swift in Sources */,
+				4FB20C782868B81A008010CE /* ForgerPasswordViewController.swift in Sources */,
+				4FB20C87286A12FF008010CE /* DatabaseManger.swift in Sources */,
+				4FB20C91286A6717008010CE /* ResetConfirmViewController.swift in Sources */,
 				4FAEF14B2846150B000B9A80 /* Driver.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -370,6 +419,9 @@
 				DEVELOPMENT_TEAM = 9P3NR52KMG;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Driver/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = Driver;
+				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -398,6 +450,9 @@
 				DEVELOPMENT_TEAM = 9P3NR52KMG;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Driver/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = Driver;
+				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -440,6 +495,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		4FB20C7D28692F27008010CE /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
 		4FE0D60028609EDD0066F00B /* XCRemoteSwiftPackageReference "SideMenu" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/jonkykong/SideMenu.git";
@@ -459,6 +522,26 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		4FB20C7E28692F27008010CE /* FirebaseAuth */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 4FB20C7D28692F27008010CE /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAuth;
+		};
+		4FB20C8028692F27008010CE /* FirebaseDatabase */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 4FB20C7D28692F27008010CE /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseDatabase;
+		};
+		4FB20C8228692F27008010CE /* FirebaseRemoteConfig */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 4FB20C7D28692F27008010CE /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseRemoteConfig;
+		};
+		4FB20C8428692F27008010CE /* FirebaseStorage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 4FB20C7D28692F27008010CE /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseStorage;
+		};
 		4FE0D60128609EDD0066F00B /* SideMenu */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 4FE0D60028609EDD0066F00B /* XCRemoteSwiftPackageReference "SideMenu" */;
