@@ -7,7 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4F25187A286D801B00A8BA78 /* animat.mov in Resources */ = {isa = PBXBuildFile; fileRef = 4F251879286D801B00A8BA78 /* animat.mov */; };
+		4F25187E286D929E00A8BA78 /* cancel.mov in Resources */ = {isa = PBXBuildFile; fileRef = 4F25187B286D929D00A8BA78 /* cancel.mov */; };
+		4F25187F286D929E00A8BA78 /* send.mov in Resources */ = {isa = PBXBuildFile; fileRef = 4F25187C286D929E00A8BA78 /* send.mov */; };
+		4F251880286D929E00A8BA78 /* payment.mov in Resources */ = {isa = PBXBuildFile; fileRef = 4F25187D286D929E00A8BA78 /* payment.mov */; };
+		4F251882286D9FEB00A8BA78 /* SendAnimationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F251881286D9FEB00A8BA78 /* SendAnimationViewController.swift */; };
+		4F251884286D9FFD00A8BA78 /* PaymentAnimationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F251883286D9FFD00A8BA78 /* PaymentAnimationViewController.swift */; };
+		4F251886286DA01900A8BA78 /* CancelAnimationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F251885286DA01900A8BA78 /* CancelAnimationViewController.swift */; };
 		4F25B85928644D0F00DF3E8F /* SearchCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F25B85828644D0F00DF3E8F /* SearchCell.swift */; };
+		4F25C2B1286C841E003C9A70 /* AnimationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F25C2B0286C841E003C9A70 /* AnimationViewController.swift */; };
 		4F2AB831285F42C800637D73 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F2AB830285F42C800637D73 /* MapViewController.swift */; };
 		4F89F8722847794A00AB7152 /* SideMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F89F8712847794A00AB7152 /* SideMenuViewController.swift */; };
 		4F89F8742847796100AB7152 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F89F8732847796100AB7152 /* MainViewController.swift */; };
@@ -43,7 +51,15 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4F251879286D801B00A8BA78 /* animat.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = animat.mov; sourceTree = "<group>"; };
+		4F25187B286D929D00A8BA78 /* cancel.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; name = cancel.mov; path = ../../../../../Downloads/cancel.mov; sourceTree = "<group>"; };
+		4F25187C286D929E00A8BA78 /* send.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; name = send.mov; path = ../../../../../Downloads/send.mov; sourceTree = "<group>"; };
+		4F25187D286D929E00A8BA78 /* payment.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; name = payment.mov; path = ../../../../../Downloads/payment.mov; sourceTree = "<group>"; };
+		4F251881286D9FEB00A8BA78 /* SendAnimationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendAnimationViewController.swift; sourceTree = "<group>"; };
+		4F251883286D9FFD00A8BA78 /* PaymentAnimationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentAnimationViewController.swift; sourceTree = "<group>"; };
+		4F251885286DA01900A8BA78 /* CancelAnimationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CancelAnimationViewController.swift; sourceTree = "<group>"; };
 		4F25B85828644D0F00DF3E8F /* SearchCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchCell.swift; sourceTree = "<group>"; };
+		4F25C2B0286C841E003C9A70 /* AnimationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimationViewController.swift; sourceTree = "<group>"; };
 		4F2AB830285F42C800637D73 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		4F89F8712847794A00AB7152 /* SideMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuViewController.swift; sourceTree = "<group>"; };
 		4F89F8732847796100AB7152 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
@@ -91,6 +107,28 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4F25C2AA286C82C5003C9A70 /* Media */ = {
+			isa = PBXGroup;
+			children = (
+				4F25187B286D929D00A8BA78 /* cancel.mov */,
+				4F25187D286D929E00A8BA78 /* payment.mov */,
+				4F25187C286D929E00A8BA78 /* send.mov */,
+				4F251879286D801B00A8BA78 /* animat.mov */,
+			);
+			path = Media;
+			sourceTree = "<group>";
+		};
+		4F25C2AF286C8405003C9A70 /* Animation */ = {
+			isa = PBXGroup;
+			children = (
+				4F25C2B0286C841E003C9A70 /* AnimationViewController.swift */,
+				4F251881286D9FEB00A8BA78 /* SendAnimationViewController.swift */,
+				4F251883286D9FFD00A8BA78 /* PaymentAnimationViewController.swift */,
+				4F251885286DA01900A8BA78 /* CancelAnimationViewController.swift */,
+			);
+			path = Animation;
+			sourceTree = "<group>";
+		};
 		4F89F875284782F100AB7152 /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -123,6 +161,7 @@
 			children = (
 				4FAEF1402846150B000B9A80 /* AppDelegate.swift */,
 				4FAEF1422846150B000B9A80 /* SceneDelegate.swift */,
+				4F25C2AA286C82C5003C9A70 /* Media */,
 				4F89F875284782F100AB7152 /* Model */,
 				4FAEF157284638DC000B9A80 /* ViewController */,
 				4FAEF1462846150B000B9A80 /* Main.storyboard */,
@@ -150,6 +189,7 @@
 		4FE0D5FF28608EAD0066F00B /* LogIn */ = {
 			isa = PBXGroup;
 			children = (
+				4F25C2AF286C8405003C9A70 /* Animation */,
 				4FAEF1442846150B000B9A80 /* LogInViewController.swift */,
 				4FAEF15828463940000B9A80 /* LogoViewController.swift */,
 				4FB20C6F2868A260008010CE /* SignUpViewController.swift */,
@@ -239,8 +279,12 @@
 			files = (
 				4FAEF1502846150F000B9A80 /* LaunchScreen.storyboard in Resources */,
 				4FB20C8D286A2F50008010CE /* GoogleService-Info.plist in Resources */,
+				4F25187F286D929E00A8BA78 /* send.mov in Resources */,
+				4F25187A286D801B00A8BA78 /* animat.mov in Resources */,
 				4FAEF14D2846150F000B9A80 /* Assets.xcassets in Resources */,
+				4F25187E286D929E00A8BA78 /* cancel.mov in Resources */,
 				4FAEF1482846150B000B9A80 /* Main.storyboard in Resources */,
+				4F251880286D929E00A8BA78 /* payment.mov in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -256,13 +300,17 @@
 				4F89F8772847830B00AB7152 /* SideMenuModel.swift in Sources */,
 				4FAEF1452846150B000B9A80 /* LogInViewController.swift in Sources */,
 				4F2AB831285F42C800637D73 /* MapViewController.swift in Sources */,
+				4F251886286DA01900A8BA78 /* CancelAnimationViewController.swift in Sources */,
 				4FB20C8F286A3953008010CE /* PromoCodeViewController.swift in Sources */,
 				4FAEF1412846150B000B9A80 /* AppDelegate.swift in Sources */,
+				4F25C2B1286C841E003C9A70 /* AnimationViewController.swift in Sources */,
 				4FB20C702868A260008010CE /* SignUpViewController.swift in Sources */,
 				4FAEF15928463940000B9A80 /* LogoViewController.swift in Sources */,
 				4F89F87B2847837300AB7152 /* SideMenuCell.swift in Sources */,
 				4FB20C722868A881008010CE /* ResetPasswordViewController.swift in Sources */,
+				4F251882286D9FEB00A8BA78 /* SendAnimationViewController.swift in Sources */,
 				4FAEF1432846150B000B9A80 /* SceneDelegate.swift in Sources */,
+				4F251884286D9FFD00A8BA78 /* PaymentAnimationViewController.swift in Sources */,
 				4FB20C89286A14B9008010CE /* User.swift in Sources */,
 				4FB20C7A2868B834008010CE /* ConfirmViewController.swift in Sources */,
 				4F89F8722847794A00AB7152 /* SideMenuViewController.swift in Sources */,
