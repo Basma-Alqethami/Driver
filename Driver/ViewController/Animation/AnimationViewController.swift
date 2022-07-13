@@ -16,7 +16,7 @@ class AnimationViewController: UIViewController {
 
         // Do any additional setup after loading the view.
     }
-    
+
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
 
@@ -27,6 +27,14 @@ class AnimationViewController: UIViewController {
         view.layer.addSublayer(layer)
         player.volume = 0
         player.play()
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(videoDidEnd), name: NSNotification.Name.AVPlayerItemDidPlayToEndTime, object: nil)
     }
 
+    @objc func videoDidEnd(notification: NSNotification) {
+        print("video ended")
+        self.dismiss(animated: true, completion: nil)
+    }
+    deinit {    NotificationCenter.default.removeObserver(self) }
+    
 }

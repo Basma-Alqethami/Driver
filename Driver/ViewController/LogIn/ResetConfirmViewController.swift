@@ -31,7 +31,8 @@ class ResetConfirmViewController: UIViewController , UNUserNotificationCenterDel
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        self.hideKeyboardWhenTappedAround()
+
         cardView.layer.borderWidth = 0.5
         firstTF.layer.borderWidth = 0.5
         secondTF.layer.borderWidth = 0.5

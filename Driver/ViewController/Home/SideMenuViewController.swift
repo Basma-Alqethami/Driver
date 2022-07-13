@@ -18,7 +18,8 @@ class SideMenuViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        self.hideKeyboardWhenTappedAround()
+
         guard let name = UserDefaults.standard.value(forKey: "name") as? String else {
             print("fffffffffffff")
              return
@@ -32,6 +33,7 @@ class SideMenuViewController: UIViewController {
         UserDefaults.standard.setValue("", forKey: "name")
         UserDefaults.standard.setValue("", forKey: "phone")
         UserDefaults.standard.setValue("", forKey: "promoCode")
+        UserDefaults.standard.setValue("", forKey: "password")
 
         self.view.window!.rootViewController?.dismiss(animated: false, completion: nil)
 

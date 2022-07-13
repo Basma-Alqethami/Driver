@@ -20,11 +20,13 @@ class SignUpViewController: UIViewController {
         super.viewDidLoad()
         cardView.layer.borderWidth = 1
         cardView.layer.cornerRadius = 30
+        self.hideKeyboardWhenTappedAround()
+
     }
 
     @IBAction func SignUp(_ sender: UIButton) {
         
-        guard let Name = Name.text, let Number = Number.text, let Password = Password.text, let ConfirmPassword = ConfirmPassword.text, let PromoCode = PromoCode.text, !Name.isEmpty, !Number.isEmpty, !Password.isEmpty, !ConfirmPassword.isEmpty else {
+        guard let name = Name.text, let Number = Number.text, let Password = Password.text, let ConfirmPassword = ConfirmPassword.text, !name.isEmpty, !Number.isEmpty, !Password.isEmpty, !ConfirmPassword.isEmpty else {
             alertUserError(msg: "Please fill in all fields")
             return
         }
@@ -59,9 +61,10 @@ class SignUpViewController: UIViewController {
             }
             
             UserDefaults.standard.setValue(Number, forKey: "phone")
-            UserDefaults.standard.setValue(Name, forKey: "name")
-
-            let User = User(Name: Name,Phone: Number,Password: Password,PromoCode: PromoCode)
+            UserDefaults.standard.setValue(name, forKey: "name")
+            UserDefaults.standard.setValue(Password, forKey: "password")
+            
+            let User = User(Name: name,Phone: Number,Password: Password,PromoCode: " ")
             
             DatabaseManger.shared.insertUser(with: User , completion: { success in
                 if success {

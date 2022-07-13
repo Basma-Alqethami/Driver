@@ -19,6 +19,7 @@ class LogInViewController: UIViewController {
         cardView.layer.borderWidth = 1
         cardView.layer.cornerRadius = 30
             
+        self.hideKeyboardWhenTappedAround()
 
     }
     
@@ -66,7 +67,8 @@ class LogInViewController: UIViewController {
                         
                         UserDefaults.standard.setValue(data.Phone, forKey: "phone")
                         UserDefaults.standard.setValue(data.Name, forKey: "name")
-
+                        UserDefaults.standard.setValue(data.Password, forKey: "password")
+                        
                         let vc = strongSelf.storyboard?.instantiateViewController(withIdentifier: "VerificationCode") as! ConfirmViewController
                         let nav = UINavigationController(rootViewController: vc)
                         nav.modalPresentationStyle = .overCurrentContext

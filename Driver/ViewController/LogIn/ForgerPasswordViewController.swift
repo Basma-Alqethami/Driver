@@ -16,6 +16,7 @@ class ForgerPasswordViewController: UIViewController {
         super.viewDidLoad()
         cardView.layer.borderWidth = 1
         cardView.layer.cornerRadius = 30
+        self.hideKeyboardWhenTappedAround()
 
     }
     

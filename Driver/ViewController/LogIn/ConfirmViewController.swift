@@ -12,7 +12,6 @@ import Foundation
 class ConfirmViewController: UIViewController, UNUserNotificationCenterDelegate {
     
     @IBOutlet weak var cardView: UIView!
-    
     @IBOutlet weak var resendButton: UIButton!
     @IBOutlet weak var mobileNum: UILabel!
     
@@ -33,7 +32,8 @@ class ConfirmViewController: UIViewController, UNUserNotificationCenterDelegate 
         super.viewDidLoad()
         
         mobileNum.text = (UserDefaults.standard.value(forKey: "phone") as! String)
-        
+        self.hideKeyboardWhenTappedAround()
+
         cardView.layer.borderWidth = 0.5
         firstTF.layer.borderWidth = 0.5
         secondTF.layer.borderWidth = 0.5
@@ -162,8 +162,11 @@ class ConfirmViewController: UIViewController, UNUserNotificationCenterDelegate 
         thirdNum = "\(Int.random(in: 0...9))"
         fourthNum = "\(Int.random(in: 0...9))"
         
-        var code = firstNum+secondNum+thirdNum+fourthNum
+        let code = firstNum+secondNum+thirdNum+fourthNum
         notification(code: code)
+        startOtpTimer()
+        resendButton.isEnabled = false
+
     }
     
     func alertUserError(msg: String){

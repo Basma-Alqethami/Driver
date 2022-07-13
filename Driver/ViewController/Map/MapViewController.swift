@@ -10,11 +10,17 @@ import MapKit
 import CoreLocation
 import GooglePlaces
 
-class MapViewController: UIViewController, CLLocationManagerDelegate {
+class CustomPointAnnotation: MKPointAnnotation {
+    var pinCustomImageName:String!
+}
+
+class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDelegate {
     
     
     @IBOutlet weak var mapView: MKMapView!
     var Manager = CLLocationManager()
+    var pointAnnotation: CustomPointAnnotation!
+    var pinAnnotationView:MKPinAnnotationView!
     
     @IBOutlet weak var locationView: UIView!
     @IBOutlet weak var searchView: UIStackView!
@@ -26,11 +32,17 @@ class MapViewController: UIViewController, CLLocationManagerDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.hideKeyboardWhenTappedAround()
+
+        locationView.layer.cornerRadius = 15
+        
         searchTable.delegate = self
         searchTable.dataSource = self
         
         Manager.delegate = self
+        mapView.delegate = self
         Manager.desiredAccuracy = kCLLocationAccuracyBest
+        mapView.showsUserLocation = true
         
         if isLocationServiceEnabled(){
             checkAuthorization()
@@ -38,7 +50,11 @@ class MapViewController: UIViewController, CLLocationManagerDelegate {
             showAlart(msg: "Please enable location service")
         }
         searchBar.delegate = self
-        }
+    }
+    
+    @IBAction func back(_ sender: UIBarButtonItem) {
+        self.dismiss(animated: true, completion: nil)
+    }
     
     func isLocationServiceEnabled() -> Bool {
         return CLLocationManager.locationServicesEnabled()
@@ -99,7 +115,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate {
         case .denied:
             showAlart(msg: "Please authorize access to location")
             break
-
+            
         default:
             showAlart(msg: "default ...")
             break
@@ -124,11 +140,11 @@ class MapViewController: UIViewController, CLLocationManagerDelegate {
         searchView.isHidden = false
         locationView.isHidden = true
     }
-
+    
 }
 
 extension MapViewController : UISearchBarDelegate {
-
+    
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         guard let searchBarText = searchBar.text, !searchBarText.replacingOccurrences(of: " ", with: "").isEmpty else {
             return
@@ -169,8 +185,55 @@ extension MapViewController : UITableViewDelegate, UITableViewDataSource{
     }
     
     func dropPinZoomIn(placemark:MKPlacemark){
-        let region = MKCoordinateRegion(center: placemark.coordinate, latitudinalMeters: 1000, longitudinalMeters: 1000)
+        let region = MKCoordinateRegion(center: placemark.coordinate, latitudinalMeters: 900, longitudinalMeters: 900)
+        
+        guard let location = placemark.location else {return}
+        
+        UserDefaults.standard.setValue(placemark.name, forKey: "location")
+        
+        pointAnnotation = CustomPointAnnotation()
+            pointAnnotation.coordinate = location.coordinate
+            pinAnnotationView = MKPinAnnotationView(annotation: pointAnnotation, reuseIdentifier: "AnnotationIdentifier")
+        mapView.addAnnotation(pinAnnotationView.annotation!)
+        
         mapView.setRegion(region, animated: true)
+        
+        searchView.isHidden = true
+
+        let vc = self.storyboard?.instantiateViewController(withIdentifier: "DestinationView") as! DestinationViewController
+        let nav = UINavigationController(rootViewController: vc)
+        nav.modalPresentationStyle = .overCurrentContext
+        self.present(nav, animated: false)
+    }
+    
+    func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
+        
+        guard !annotation.isKind(of: MKUserLocation.self) else {
+            return nil
+        }
+        
+        let annotationIdentifier = "AnnotationIdentifier"
+        
+        var annotationView = mapView.dequeueReusableAnnotationView(withIdentifier: annotationIdentifier)
+        if annotationView == nil {
+            annotationView = MKAnnotationView(annotation: annotation, reuseIdentifier: annotationIdentifier)
+            annotationView?.rightCalloutAccessoryView = UIButton(type: .detailDisclosure)
+            annotationView!.canShowCallout = true
+        }
+        else {
+            annotationView!.annotation = annotation
+        }
+        
+        // Resize image
+        let pinImage = UIImage(named: "pin")
+        let size = CGSize(width: 22, height: 42)
+        UIGraphicsBeginImageContext(size)
+        pinImage!.draw(in: CGRect(x: 0, y: 0, width: size.width, height: size.height))
+        let resizedImage = UIGraphicsGetImageFromCurrentImageContext()
+
+        annotationView!.image = resizedImage
+        
+        return annotationView
     }
     
     func parseAddress(selectedItem:MKPlacemark) -> String {
@@ -197,26 +260,3 @@ extension MapViewController : UITableViewDelegate, UITableViewDataSource{
         return addressLine
     }
 }
-//
-//extension MapViewController: MKMapViewDelegate {
-//
-//    func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
-//        let identifier = "MyPin"
-//
-//        if annotation is MKUserLocation {
-//            return nil
-//        }
-//
-//        var annotationView = mapView.dequeueReusableAnnotationView(withIdentifier: identifier)
-//
-//        if annotationView == nil {
-//            annotationView = MKAnnotationView(annotation: annotation, reuseIdentifier: identifier)
-//            annotationView?.canShowCallout = true
-//            annotationView?.image = UIImage(named: "Image")
-//        } else {
-//            annotationView?.annotation = annotation
-//        }
-//
-//        return annotationView
-//    }
-//}

@@ -15,7 +15,8 @@ class PromoCodeViewController: UIViewController {
     var newCode = ""
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        self.hideKeyboardWhenTappedAround()
+
         copiedButton.layer.borderWidth = 1
         copiedButton.layer.cornerRadius = 10
         

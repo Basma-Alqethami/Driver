@@ -37,43 +37,19 @@ extension DatabaseManger {
                 completion(false)
                 return
             }
+
+            let newElement = [
+                "name": user.Name,
+                "phone": user.Phone,
+                "promo_code": user.PromoCode
+            ]
             
-            self.database.child("users").observeSingleEvent(of: .value) { snapshot in
-                // snapshot is not the value itself
-                if var usersCollection = snapshot.value as? [[String: String]] {
-                    
-                    let newElement = [
-                        "name": user.Name,
-                        "phone": user.Phone,
-                        "promo_code": user.PromoCode
-                    ]
-                    usersCollection.append(newElement)
-                    
-                    self.database.child("users").setValue(usersCollection) { error, _ in
-                        guard error == nil else {
-                            completion(false)
-                            return
-                        }
-                        completion(true)
-                    }
-                    
-                }else{
-                    // create that array
-                    let newCollection: [[String: String]] = [
-                        [
-                            "name": user.Name,
-                            "phone": user.Phone,
-                            "promo_code": user.PromoCode
-                        ]
-                    ]
-                    self.database.child("users").setValue(newCollection) { error, _ in
-                        guard error == nil else {
-                            completion(false)
-                            return
-                        }
-                        completion(true)
-                    }
+            self.database.child("users").child(user.Phone).setValue(newElement) { error, _ in
+                guard error == nil else {
+                    completion(false)
+                    return
                 }
+                completion(true)
             }
         }
     }

@@ -17,7 +17,8 @@ class ResetPasswordViewController: UIViewController {
         super.viewDidLoad()
         viewCard.layer.borderWidth = 1
         viewCard.layer.cornerRadius = 30
-        
+        self.hideKeyboardWhenTappedAround()
+
     }
     
     @IBAction func backButton(_ sender: UIButton) {
@@ -47,7 +48,10 @@ class ResetPasswordViewController: UIViewController {
                 
         DatabaseManger.shared.ubdatePassword(with: PhoneNumber, password: NewPassword)
         
-        self.view.window!.rootViewController?.dismiss(animated: false, completion: nil)
+        let vc = self.storyboard?.instantiateViewController(withIdentifier: "loginView") as! LogInViewController
+        let nav = UINavigationController(rootViewController: vc)
+        nav.modalPresentationStyle = .fullScreen
+        self.present(nav, animated: false)
         
     }
     

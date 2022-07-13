@@ -20,7 +20,8 @@ class MainViewController: UIViewController {
     
     override public func viewDidLoad() {
         super.viewDidLoad()
-        
+        self.hideKeyboardWhenTappedAround()
+
         let sideMenu = SideMenuNavigationController(rootViewController: SideMenuViewController())
         sideMenu.leftSide = true
                 
